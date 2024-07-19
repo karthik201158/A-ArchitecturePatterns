@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "A-ArchitecturePatterns"
 include(":app")
- 
+include(":mvvm")
