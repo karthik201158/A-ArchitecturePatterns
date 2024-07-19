@@ -1,4 +1,4 @@
-package com.karthik.a.mvvm.utils
+package com.karthik.a.mvvmclean.utils
 
 object MyConstants {
 
