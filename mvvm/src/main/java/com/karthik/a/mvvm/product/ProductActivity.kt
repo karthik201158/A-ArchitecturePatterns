@@ -6,7 +6,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.karthik.a.mvvm.R
 import com.karthik.a.mvvm.utils.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,24 +29,27 @@ class ProductActivity : AppCompatActivity() {
             insets
         }
         productViewModel.getProducts()
+       // productViewModel.getProductsWithFlow()
         setUpObserver()
     }
 
     private fun setUpObserver() {
         lifecycleScope.launch {
-            productViewModel.productList.collect { result ->
-                when (result) {
-                    is NetworkResult.Success -> {
-                        // Update UI with the product list
-                        println(result.data?.data)
-                    }
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                productViewModel.productList.collect { result ->
+                    when (result) {
+                        is NetworkResult.Success -> {
+                            // Update UI with the product list
+                            println(result.data?.data)
+                        }
 
-                    is NetworkResult.Error -> {
-                        // Show error message
-                    }
+                        is NetworkResult.Error -> {
+                            // Show error message
+                        }
 
-                    is NetworkResult.Loading -> {
-                        // Show loading indicator
+                        is NetworkResult.Loading -> {
+                            // Show loading indicator
+                        }
                     }
                 }
             }
