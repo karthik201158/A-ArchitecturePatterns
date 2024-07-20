@@ -11,6 +11,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/mvvm" />
+            <option value="$PROJECT_DIR$/mvvmclean" />
+            <option value="$PROJECT_DIR$/mvvmremotelocal" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

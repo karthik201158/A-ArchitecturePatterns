@@ -73,6 +73,9 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
 
     testImplementation(libs.junit)
+    testImplementation("org.mockito:mockito-core:4.11.0")
+    testImplementation("org.mockito:mockito-inline:4.11.0")
+    testImplementation("org.mockito:mockito-kotlin:4.1.0")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

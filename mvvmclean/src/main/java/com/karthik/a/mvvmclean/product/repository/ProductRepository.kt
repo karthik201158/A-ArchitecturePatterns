@@ -6,6 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface ProductRepository {
     suspend fun getProducts() : NetworkResult<ProductResDto>
-
     suspend fun getProductsByCreatingFlow() : Flow<NetworkResult<ProductResDto>>
 }

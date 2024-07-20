@@ -23,3 +23,4 @@ rootProject.name = "A-ArchitecturePatterns"
 include(":app")
 include(":mvvm")
 include(":mvvmclean")
+include(":mvvmremotelocal")
